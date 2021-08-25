@@ -9,7 +9,6 @@ This is a Node.js application that uses the Inquirer npm to generate a Readme ma
 
 ### How to use project
 
-To view this project, simply go to https://zd092718.github.io/weatherdashboardhw/ to view the finished product. 
 
 To access the code for the generator:
 
