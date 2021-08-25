@@ -6,16 +6,16 @@ function renderLicenseBadge(license) {
     case 'MIT':
       return 'https://img.shields.io/badge/License-MIT-yellow.svg'
     break;
-    case 'Mozilla':
+    case 'MOZILLA':
       return 'https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg'
     break;
-    case 'Apache':
+    case 'APACHE':
       return 'https://img.shields.io/badge/License-Apache%202.0-blue.svg'
     break;
-    case 'Boost':
+    case 'BOOST':
       return 'https://img.shields.io/badge/License-Boost%201.0-lightblue.svg'
     break;
-    case 'Eclipse':
+    case 'ECLIPSE':
       return 'https://img.shields.io/badge/License-EPL%201.0-red.svg'
     break;
     case 'SIL':
@@ -24,24 +24,23 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Renders
 function renderLicenseLink(license) {
   license = license.toUpperCase();
   switch (license){
     case 'MIT':
         return 'https://opensource.org/licenses/MIT'
     break;
-    case 'Mozilla':
+    case 'MOZILLA':
         return 'https://opensource.org/licenses/MPL-2.0'
     break;
-    case 'Apache':
+    case 'APACHE':
         return 'https://opensource.org/licenses/Apache-2.0'
     break;
-    case 'Boost':
+    case 'BOOST':
         return 'https://www.boost.org/LICENSE_1_0.txt'
     break;
-    case 'Eclipse':
+    case 'ECLIPSE':
         return 'https://opensource.org/licenses/EPL-1.0'
     break;
     case 'SIL':
@@ -51,17 +50,16 @@ function renderLicenseLink(license) {
   console.log(license)
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// renderse the license section
 function renderLicenseSection(license) {
   if(license){
     return `[![License](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`
-  } else {
+  } else if(license === 'NO LICENSE') {
     return ' '
   }
 }
 
-// TODO: Create a function to generate markdown for README
+//generates markdown 
 function generateMarkdown(data) {
   return `# ${data.projectTitle}
   <details open="open">
@@ -99,9 +97,11 @@ function generateMarkdown(data) {
 
   ## Contact
   Github Profile: https://github.com/${data.username}
-  <br>
+
   Email: <a href="mailto: ${data.emailAddress}">${data.emailAddress}</a>
+
   <br>
+
   ${renderLicenseSection(data.license)}
 `;
 }
