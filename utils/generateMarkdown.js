@@ -47,7 +47,6 @@ function renderLicenseLink(license) {
         return 'https://opensource.org/licenses/OFL-1.1'
     break;
   }
-  console.log(license)
 }
 
 // renderse the license section
